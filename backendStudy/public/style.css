@@ -1,0 +1,37 @@
+/* Estilo para formulários e página moderna */
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+}
+.formulario input, .formulario button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.formulario input {
+    flex: 1 1 180px;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+.formulario input:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+.formulario button {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.formulario button:hover {
+    background: #155ab6;
+}

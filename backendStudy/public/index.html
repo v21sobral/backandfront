@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gerenciamento</h1>
+        <nav>
+            <button onclick="mostrarSecao('funcionarios')" class="nav-btn">Funcionários</button>
+            <button onclick="mostrarSecao('produtos')" class="nav-btn">Produtos</button>
+            <button onclick="mostrarSecao('clientes')" class="nav-btn">Clientes</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="funcionarios" class="secao">
+            <h2>Funcionários</h2>
+            <form id="form-funcionario" class="formulario">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="cpf" placeholder="CPF" required>
+                <input type="text" name="rg" placeholder="RG" required>
+                <input type="text" name="matricula" placeholder="Matrícula" required>
+                <input type="text" name="dataNascimento" placeholder="Data de Nascimento" required>
+                <input type="number" name="salario" placeholder="Salário" required>
+                <input type="text" name="telefone" placeholder="Telefone" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <button type="submit">Adicionar Funcionário</button>
+            </form>
+            <div class="lista" id="lista-funcionarios"></div>
+        </section>
+
+        <section id="produtos" class="secao">
+            <h2>Produtos</h2>
+            <form id="form-produto" class="formulario">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="lote" placeholder="Lote" required>
+                <input type="text" name="validade" placeholder="Validade" required>
+                <button type="submit">Adicionar Produto</button>
+            </form>
+            <div class="lista" id="lista-produtos"></div>
+        </section>
+
+        <section id="clientes" class="secao">
+            <h2>Clientes</h2>
+            <form id="form-cliente" class="formulario">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="DataNascinmento" placeholder="Data de Nascimento" required>
+                <input type="text" name="protocoloAtendimento" placeholder="Protocolo de Atendimento" required>
+                <button type="submit">Adicionar Cliente</button>
+            </form>
+            <div class="lista" id="lista-clientes"></div>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
