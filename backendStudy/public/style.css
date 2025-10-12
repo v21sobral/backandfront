@@ -1,37 +1,185 @@
-/* Estilo para formulários e página moderna */
+/* Reset e variáveis globais */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f8f9fa;
+    --accent-color: #2c3e50;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header e navegação */
+header {
+    background: white;
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+/* Formulários */
 .formulario {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 1rem auto;
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+    gap: 1rem;
 }
-.formulario input, .formulario button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
+
 .formulario input {
-    flex: 1 1 180px;
-    background: #fff;
-    transition: border-color 0.2s;
+    flex: 1 1 200px;
+    padding: 0.8rem;
+    border: 2px solid #e1e1e1;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
+
 .formulario input:focus {
-    border-color: #1a73e8;
+    border-color: var(--primary-color);
     outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
+
 .formulario button {
-    background: #1a73e8;
-    color: #fff;
+    background: var(--success-color);
+    color: white;
     border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    flex: 1;
 }
+
 .formulario button:hover {
-    background: #155ab6;
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Listas de itens */
+.lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.item h3 {
+    color: var(--accent-color);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Seções */
+.secao {
+    padding: 1rem;
+    display: none;
+}
+
+.secao.ativo {
+    display: block;
+}
+
+h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Botões de ação */
+.btn-excluir {
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-excluir:hover {
+    background: #c0392b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .formulario {
+        padding: 1rem;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        width: 100%;
+    }
 }
