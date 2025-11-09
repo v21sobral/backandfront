@@ -1,0 +1,195 @@
+.mc-arch {
+    font-family: 'Arial Rounded MT Bold', 'Arial Black', Arial, sans-serif;
+    font-size: 2.8rem;
+    color: var(--mcdonalds-yellow);
+    font-weight: 900;
+    letter-spacing: -0.15em;
+    line-height: 1;
+    text-shadow:
+        0 2px 8px #b8860b,
+        0 0 0.5em #fff200,
+        2px 2px 0 #b8860b;
+    filter: drop-shadow(0 2px 6px #b8860b);
+    margin-right: 0.5rem;
+    margin-left: 0.1rem;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), text-shadow 0.3s;
+    display: inline-block;
+}
+
+.header-title:hover .mc-arch {
+    transform: scale(1.12) rotate(-3deg);
+    text-shadow:
+        0 4px 16px #b8860b,
+        0 0 1em #fff200,
+        2px 2px 0 #b8860b;
+}
+
+@media (max-width: 768px) {
+    .mc-arch {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mc-arch {
+        font-size: 1.4rem;
+    }
+}
+.header {
+    background: linear-gradient(135deg, #680f0f 0%, var(--mcdonalds-red) 100%);
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-bottom: 4px solid var(--mcdonalds-yellow);
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(226, 0, 0);
+    pointer-events: none;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    color: #ebd301;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding: 0.5rem 0;
+    text-shadow: 2px 2px 4px rgb(255, 210, 10);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mc-logo {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(2px 2px 4px rgb(231, 208, 0));
+    transition: all 0.3s ease;
+}
+
+.header-title:hover .mc-logo {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(3px 3px 6px rgb(255, 217, 0));
+}
+
+.header-title span {
+    color: yellow;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    transition: all 0.3s ease;
+}
+
+.header-title:hover span {
+    color: var(--mcdonalds-yellow);
+    transform: scale(1.05);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--mcdonalds-yellow);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px var(--mcdonalds-yellow);
+}
+
+.nav-link:hover {
+    color: var(--mcdonalds-yellow);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: var(--mcdonalds-yellow);
+    text-shadow: 0 0 10px var(--mcdonalds-yellow);
+    box-shadow: 0 0 15px rgba(255, 199, 44, 0.3);
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .header-title {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 1.4rem;
+    }
+
+    .mc-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    .mc-logo {
+        width: 35px;
+        height: 35px;
+    }
+}

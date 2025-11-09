@@ -1,0 +1,62 @@
+.app-container {
+    background: linear-gradient(135deg, var(--mcdonalds-light) 0%, #ffffff 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Estilização do Toast */
+.Toastify__toast {
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Toastify__toast--success {
+    background: #2ecc71;
+}
+
+.Toastify__toast--error {
+    background: var(--mcdonalds-red);
+}
+
+.Toastify__progress-bar {
+    background: var(--mcdonalds-yellow);
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Seleção de texto */
+::selection {
+    background: var(--mcdonalds-yellow);
+    color: var(--mcdonalds-dark);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--mcdonalds-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--mcdonalds-red);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b71c1c;
+}

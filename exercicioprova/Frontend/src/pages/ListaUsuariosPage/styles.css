@@ -1,0 +1,171 @@
+/* Cores da McDonald's */
+:root {
+    --mcdonalds-red: #DA291C;
+    --mcdonalds-yellow: #FFC72C;
+    --mcdonalds-dark: #27251F;
+    --mcdonalds-light: #FFEDCC;
+}
+
+.lista-usuarios-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255,237,204,0.8) 0%, rgba(255,255,255,0.9) 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.lista-title {
+    font-size: 2.5rem;
+    color: var(--mcdonalds-red);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.lista-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--mcdonalds-yellow);
+    border-radius: 2px;
+}
+
+.usuarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.usuario-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 20px rgba(218, 41, 28, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.usuario-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--mcdonalds-red), var(--mcdonalds-yellow));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.usuario-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--mcdonalds-yellow);
+    box-shadow: 0 8px 30px rgba(218, 41, 28, 0.15);
+}
+
+.usuario-card:hover::before {
+    transform: scaleX(1);
+}
+
+.usuario-nome {
+    font-size: 1.4rem;
+    color: var(--mcdonalds-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-bottom: 2px dashed var(--mcdonalds-light);
+    padding-bottom: 0.5rem;
+}
+
+.usuario-info {
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.usuario-email {
+    color: var(--mcdonalds-red);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.usuario-email:hover {
+    background-color: var(--mcdonalds-light);
+    padding-left: 1rem;
+}
+
+.usuario-telefone {
+    color: var(--mcdonalds-dark);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.usuario-telefone:hover {
+    background-color: var(--mcdonalds-light);
+    padding-left: 1rem;
+}
+
+.loading {
+    text-align: center;
+    color: var(--mcdonalds-red);
+    font-size: 1.5rem;
+    margin: 4rem 0;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.6; transform: scale(1); }
+}
+
+.error-message {
+    text-align: center;
+    color: var(--mcdonalds-red);
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--mcdonalds-light);
+    border-radius: 8px;
+    border: 2px dashed var(--mcdonalds-red);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .lista-usuarios-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .lista-title {
+        font-size: 2rem;
+    }
+
+    .usuarios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .usuario-card {
+        padding: 1.2rem;
+    }
+}

@@ -1,0 +1,36 @@
+:root {
+    --mcdonalds-red: #DA291C;
+    --mcdonalds-yellow: #FFC72C;
+    --mcdonalds-dark: #27251F;
+    --mcdonalds-light: #FFEDCC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--mcdonalds-light) 0%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    width: 100%;
+}
